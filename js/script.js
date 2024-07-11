@@ -26,15 +26,16 @@ const images = [
 let container = document.getElementById('container');
 
 images.forEach((elem, index) => {
-    container.innerHTML += `<div class="card">
-        <div class="number">${index + 1}</div>
+    container.innerHTML += 
+    `<div class="card">
+       <img src = "${elem.image}">
         <div class="infos">
-            <h2>${elem.image}</h2>
-            <h3>${elem.title}</h3>
-            <p>Testo: ${elem.text == true ? 'si' : 'no'}</p>
+          <h2>${elem.title}</h2>
+          <h3>${elem.text}</h3>
+
         </div>
-    </div>` 
-    
+    </div>`
+
 });
 
 

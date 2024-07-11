@@ -1,6 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .image {
-    display: flex;
-    text-align: center;
+    
+    
+    height: 200px;
+    width: 600px;
 }
 
 .text {
@@ -14,9 +22,22 @@
 }
 
 .container {
-    width: 1000px;
-    height: 800px;
-    background-color: aqua;
-    text-align: center;
-    display: flex;
+    width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    height: 1000px;
+
 }
+
+h2 {
+    margin: 10px 0;
+}
+
+card {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    
+    
+}
+
