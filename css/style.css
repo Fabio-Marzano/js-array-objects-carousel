@@ -52,6 +52,12 @@
 
 }
 
+.txt-image {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
 h2 {
     margin: 10px 0;
 }

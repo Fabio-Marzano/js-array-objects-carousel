@@ -23,10 +23,18 @@ const images = [
     }
 ];
  
-
+//ASSEGNO LA VARIABILE//
 let itemsContent = '';
+//AVVIO IL CICLO DELL'ARRAY CONCATENATO IN HTML CON LE IMMAGINI E IL TESTO//
 images.forEach((elem) => {
-    itemsContent += 
+    itemsContent +=  `
+    <div class="position-relative">
+        <img src="./img/${elem.image}" class="img" alt="${elem.title}">
+         <div class="txt-image">
+             <h3>${elem.title}</h3>
+             <p>${elem.text}</p>
+         </div>
+    </div>`
 
     
 });
