@@ -24,12 +24,18 @@ const images = [
 ];
  
 //ASSEGNO LA VARIABILE//
-let itemsContent = '';
+let itemsContent = ''; //DEFINIZIONE VARIABILE CONTENTENTE IMMAGINI//
+let activeElement = 0;// DEFINIZIONE VARIABILE CONTENENTE L'INDICE DELL'IMMAGINE//
+
+const prev = document.querySelector('prev.');
+
+const next = document.querySelector('next.');
+
 //AVVIO IL CICLO DELL'ARRAY CONCATENATO IN HTML CON LE IMMAGINI E IL TESTO//
 images.forEach((elem) => {
     itemsContent +=  `
-    <div class="position-relative">
-        <img src="./img/${elem.image}" class="img" alt="${elem.title}">
+    <div class="image position-relative h-100 d-none">
+        <img src="./${elem.image}" class="main-image" alt="${elem.title}">
          <div class="txt-image">
              <h3>${elem.title}</h3>
              <p>${elem.text}</p>
@@ -37,6 +43,30 @@ images.forEach((elem) => {
     </div>`
 
     
+});
+//RECUPERO IL PRIMO ELEMENTO CON LA CLASSE IMAGE//
+document.querySelector('#my-carousel-container .images').innerHTML = itemsContent;
+// RECUPERO IL PRIMO ELEMENTO CON LA CLASSE IMAGE CHE CONTIENE ANCHE LA CLASSE D-NONE//
+console.log(document.querySelectorAll('.image'));
+console.log(document.querySelectorAll('.image')[activeElement]);
+
+
+
+let allImages = document.querySelectorAll('.image');//RECUPERO GLI ELEMENTI CON LA CLASSE IMAGE//
+allImages[activeElement].classList.remove('d-none');//RIMUOVO LA CLASSE D-NONE AL PRIMO ELEMENTO//
+//DEFINISCO LA FUNZIONALITA' DEL CLICK SULLA FRECCIA DESTRA//
+next.addEventListener('click', function() {
+    allImages[activeElement].classList.add('d-none');//AGGIUNGO LA CLASSE D-NONE ALL'ELEMENTO//
+
+    if(activeElement == allImages.length - 1) {
+        activeElement = 0;
+    }
+    else {
+        activeElement++;
+    }
+    
+
+    allImages[activeElement].classList.remove('d-none');//RIMUOVO LA CLASSE D-NONE//
 });
 
 
